@@ -5,7 +5,7 @@ import { api } from "../../convex/_generated/api";
 import { Avatar } from "../components/avatar";
 import { GlowingStarsBackgroundCard } from "../components/glowing-stars";
 import { useTgUser } from "../hooks/use-tg-user";
-import logo from "/mb-logo.png";
+
 
 export const PointsSkeleton = () => {
   return (
@@ -41,6 +41,7 @@ export const Home = () => {
           </div>
 
           <div className="relative">
+
             <p className="text-[2rem] font-mono font-bold h-12">
               {user?.points || 0} P
             </p>
