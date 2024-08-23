@@ -1,5 +1,3 @@
-"use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "../lib/utils";
@@ -12,7 +10,12 @@ export const GlowingStarsBackgroundCard = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div className={cn("absolute inset-0 z-[5] h-full w-full", className)}>
+    <div
+      className={cn(
+        "absolute inset-0 z-[5] opacity-[0.5] h-full w-full",
+        className,
+      )}
+    >
       <div className="flex justify-center items-center">
         <Illustration />
       </div>

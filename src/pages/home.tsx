@@ -6,6 +6,7 @@ import { Avatar } from "../components/avatar";
 import { GlowingStarsBackgroundCard } from "../components/glowing-stars";
 import { useTgUser } from "../hooks/use-tg-user";
 
+
 export const PointsSkeleton = () => {
   return (
     <div className="text-center h-10 bg-slate-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
@@ -21,10 +22,14 @@ export const Home = () => {
   return (
     <>
       <Toaster position="top-center" duration={3000} />
-      <main className="justify-center mx-auto p-10 h-screen flex items-center">
+      <main className="justify-center mx-auto h-screen flex items-center">
+        <GlowingStarsBackgroundCard />
+        <div className="absolute right-2 top-2">
+          <img src={logo} alt="logo" className="h-5" />
+        </div>
         <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
         <div className="flex flex-col space-y-10 text-center">
-          <div className="flex flex-col">
+          <div className="flex flex-col relative z-[10]">
             <Avatar
               firstName={currentTgUser?.firstName}
               lastName={currentTgUser?.lastName}
@@ -36,7 +41,6 @@ export const Home = () => {
           </div>
 
           <div className="relative">
-            <GlowingStarsBackgroundCard />
 
             <p className="text-[2rem] font-mono font-bold h-12">
               {user?.points || 0} P
